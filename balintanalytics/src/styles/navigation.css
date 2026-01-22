@@ -1,9 +1,10 @@
 .navbar {
-  background-color: white;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background-color: var(--bg-color);
+  box-shadow: 0 2px 8px var(--card-shadow);
   position: sticky;
   top: 0;
   z-index: 100;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .navbar-container {
@@ -19,7 +20,7 @@
 .navbar-logo {
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--dark-color);
+  color: var(--text-color);
   display: flex;
   flex-direction: column;
   line-height: 1;
@@ -33,9 +34,15 @@
 
 .logo-subtitle {
   font-size: 0.75rem;
-  color: var(--text-color);
+  color: var(--text-muted);
   font-weight: 400;
   margin-top: 4px;
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .nav-menu {
@@ -52,23 +59,24 @@
 .nav-link {
   color: var(--text-color);
   font-weight: 500;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, opacity 0.3s ease;
 }
 
 .nav-link:hover {
-  color: var(--primary-color);
+  opacity: 0.7;
 }
 
 .nav-link-btn {
   background-color: var(--primary-color);
-  color: white !important;
+  color: var(--bg-color) !important;
   padding: 10px 20px;
   border-radius: 6px;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, opacity 0.3s ease;
 }
 
 .nav-link-btn:hover {
   background-color: var(--secondary-color);
+  opacity: 1;
 }
 
 .hamburger {
@@ -77,9 +85,13 @@
   color: var(--text-color);
 }
 
- @media (max-width: 768px) {
+@media (max-width: 768px) {
   .hamburger {
     display: block;
+  }
+
+  .navbar-actions {
+    order: 2;
   }
 
   .nav-menu {
@@ -87,11 +99,11 @@
     top: 80px;
     left: -100%;
     flex-direction: column;
-    background-color: white;
+    background-color: var(--bg-color);
     width: 100%;
     text-align: center;
     transition: 0.3s;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 16px var(--card-shadow);
     padding: 2rem 0;
     gap: 1rem;
   }

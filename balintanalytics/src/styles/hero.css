@@ -1,8 +1,9 @@
 .hero {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  background: var(--primary-color);
+  color: var(--bg-color);
   padding: 100px 20px;
   text-align: center;
+  transition: background-color 0.3s ease;
 }
 
 .hero-content {
@@ -14,6 +15,7 @@
   font-size: 3.5rem;
   margin-bottom: 0.5rem;
   font-weight: 800;
+  color: var(--bg-color);
 }
 
 .hero-subtitle {
@@ -21,18 +23,23 @@
   margin-bottom: 1.5rem;
   font-weight: 300;
   letter-spacing: 2px;
+  color: var(--bg-color);
+  opacity: 0.9;
 }
 
 .hero-description {
   font-size: 1.1rem;
   margin-bottom: 1rem;
   line-height: 1.8;
+  color: var(--bg-color);
+  opacity: 0.95;
 }
 
 .hero-secondary {
   font-size: 1rem;
   margin-bottom: 2rem;
-  opacity: 0.95;
+  opacity: 0.85;
+  color: var(--bg-color);
 }
 
 .hero-cta {
@@ -48,25 +55,26 @@
 }
 
 .hero .btn-primary {
-  background-color: white;
-  color: #667eea;
+  background-color: var(--bg-color);
+  color: var(--primary-color);
 }
 
 .hero .btn-primary:hover {
-  background-color: #f0f0f0;
+  background-color: var(--bg-secondary);
+  opacity: 0.9;
 }
 
 .hero .btn-secondary {
-  border-color: white;
-  color: white;
+  border-color: var(--bg-color);
+  color: var(--bg-color);
 }
 
 .hero .btn-secondary:hover {
-  background-color: white;
-  color: #667eea;
+  background-color: var(--bg-color);
+  color: var(--primary-color);
 }
 
- @media (max-width: 768px) {
+@media (max-width: 768px) {
   .hero {
     padding: 60px 20px;
   }
