@@ -200,20 +200,44 @@
 
 .project-card {
   background: var(--card-bg);
-  padding: 2rem;
   border-radius: 8px;
   border: 1px solid var(--border-color);
   transition: all 0.3s ease;
+  overflow: hidden;
 }
 
 .project-card:hover {
   box-shadow: 0 12px 24px var(--card-shadow-hover);
   border-color: var(--primary-color);
+  transform: translateY(-5px);
+}
+
+.project-image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background: var(--bg-secondary);
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  filter: grayscale(100%);
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.05);
+}
+
+.project-content {
+  padding: 1.5rem;
 }
 
 .project-card h3 {
   color: var(--primary-color);
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 }
 
 .project-services {
@@ -550,31 +574,232 @@
   color: var(--primary-color);
 }
 
+/* iPad Pro (1024px) */
+@media (max-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .clients-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* iPad (768px) */
 @media (max-width: 768px) {
   .page-header {
     padding: 40px 20px;
   }
 
   .page-header h1 {
-    font-size: 2rem;
+    font-size: 1.75rem;
+  }
+
+  .page-header p {
+    font-size: 1rem;
   }
 
   .services,
   .projects-content,
   .blog-content,
   .clients-content,
-  .contact-content {
-    padding: 40px 20px;
+  .contact-content,
+  .about-content {
+    padding: 40px 16px;
   }
 
   .contact-layout {
     grid-template-columns: 1fr;
   }
 
-  .services-grid,
-  .projects-grid,
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
   .blog-grid,
   .client-types {
     grid-template-columns: 1fr;
+  }
+
+  .clients-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .service-card-content {
+    padding: 1rem;
+  }
+
+  .project-content {
+    padding: 1rem;
+  }
+
+  .client-card {
+    padding: 1.5rem;
+  }
+
+  .blog-article {
+    padding: 1.5rem;
+  }
+
+  .blog-title {
+    font-size: 1.25rem;
+  }
+
+  .blog-article-header {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .blog-article-header .blog-meta {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .cta-section,
+  .clients-cta {
+    padding: 40px 16px;
+  }
+
+  .about-section {
+    margin-bottom: 2rem;
+  }
+
+  .ceo-section {
+    padding: 1.5rem;
+  }
+}
+
+/* iPhone (480px and below) */
+@media (max-width: 480px) {
+  .page-header {
+    padding: 30px 16px;
+  }
+
+  .page-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .services,
+  .projects-content,
+  .blog-content,
+  .clients-content,
+  .contact-content,
+  .about-content {
+    padding: 30px 12px;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .service-card-image {
+    height: 160px;
+  }
+
+  .project-image {
+    height: 160px;
+  }
+
+  .service-card-content,
+  .project-content {
+    padding: 1rem;
+  }
+
+  .service-card h3,
+  .project-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .service-card p,
+  .project-card p {
+    font-size: 0.9rem;
+  }
+
+  .service-badge {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.5rem;
+  }
+
+  .client-card {
+    padding: 1.25rem;
+  }
+
+  .client-card-header h3 {
+    font-size: 1.1rem;
+  }
+
+  .blog-article {
+    padding: 1.25rem;
+  }
+
+  .blog-title {
+    font-size: 1.1rem;
+  }
+
+  .blog-excerpt {
+    font-size: 0.9rem;
+  }
+
+  .blog-full-content {
+    font-size: 0.9rem;
+  }
+
+  .cta-section,
+  .clients-cta {
+    padding: 30px 12px;
+  }
+
+  .cta-section h2,
+  .clients-cta h2 {
+    font-size: 1.25rem;
+  }
+
+  .cta-section p,
+  .clients-cta p {
+    font-size: 0.95rem;
+  }
+
+  .section-intro {
+    font-size: 1rem;
+  }
+
+  .about-section h2 {
+    font-size: 1.25rem;
+  }
+
+  .about-section p {
+    font-size: 0.95rem;
+  }
+
+  .contact-form {
+    padding: 1.25rem;
+  }
+}
+
+/* Small phones (360px) */
+@media (max-width: 360px) {
+  .page-header h1 {
+    font-size: 1.3rem;
+  }
+
+  .service-card-image,
+  .project-image {
+    height: 140px;
+  }
+
+  .service-badge {
+    font-size: 0.7rem;
   }
 }

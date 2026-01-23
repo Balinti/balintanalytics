@@ -261,7 +261,7 @@ textarea {
   border-color: var(--primary-color);
 }
 
-/* Responsive */
+/* Responsive - iPad */
 @media (max-width: 768px) {
   h1 {
     font-size: 2rem;
@@ -273,5 +273,81 @@ textarea {
 
   h3 {
     font-size: 1.2rem;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+
+  .btn {
+    padding: 10px 20px;
+  }
+
+  .btn-large {
+    padding: 12px 24px;
+    font-size: 1rem;
+  }
+}
+
+/* Responsive - iPhone */
+@media (max-width: 480px) {
+  html {
+    font-size: 15px;
+  }
+
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  h2 {
+    font-size: 1.35rem;
+  }
+
+  h3 {
+    font-size: 1.1rem;
+  }
+
+  .container {
+    padding: 0 12px;
+  }
+
+  p {
+    line-height: 1.7;
+  }
+
+  .btn {
+    padding: 10px 18px;
+    font-size: 0.95rem;
+  }
+
+  .btn-large {
+    padding: 12px 20px;
+    font-size: 0.95rem;
+    width: 100%;
+  }
+
+  input, textarea, select {
+    padding: 12px;
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+
+  .theme-toggle {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+/* Small phones */
+@media (max-width: 360px) {
+  html {
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
   }
 }
