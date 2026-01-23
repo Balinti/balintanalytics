@@ -1,6 +1,13 @@
+import { useState, useEffect } from 'react'
 import '../styles/pages.css'
 
 export default function About() {
+  const [isVisible, setIsVisible] = useState(false)
+
+  useEffect(() => {
+    setIsVisible(true)
+  }, [])
+
   return (
     <div className="about">
       <section className="page-header">
@@ -11,42 +18,43 @@ export default function About() {
 
       <section className="about-content">
         <div className="container">
-          <div className="about-section">
-            <h2>Who We Are</h2>
+          <div className={`about-section fade-in ${isVisible ? 'visible' : ''}`}>
+            <h2>Free Proof of Concept</h2>
             <p>
-              Balint Analytics is a data consulting firm founded in 2019, headquartered in Los Angeles, California. 
-              With a team of data experts, we specialize in delivering strategic data solutions for businesses of all sizes.
+              How often have individuals contacted you offering a complimentary consultation? At Balint Analytics,
+              we're offering a free proof of concept to you. This will not be a single, deceitful call with the
+              intent to convert you but rather a small project of your choosing. We do not charge for this service
+              because we believe in building long-term relationships.
+            </p>
+            <p>
+              Not sure what kind of assistance you require? Allow us to review and identify your top analytics needs.
             </p>
           </div>
 
-          <div className="about-section">
-            <h2>Our Mission</h2>
-            <p>
-              Our specialization revolves around delivering extensive consultancy encompassing data analytics and business intelligence. 
-              We focus on a close collaboration with clients throughout the entire journey, placing their distinct requirements at the forefront.
-            </p>
+          <div className={`about-section ceo-section fade-in ${isVisible ? 'visible' : ''}`} style={{ transitionDelay: '0.2s' }}>
+            <div className="ceo-content">
+              <div className="ceo-info">
+                <h2>EDOE BALINT</h2>
+                <span className="ceo-title">Owner</span>
+                <p>
+                  A seasoned entrepreneur in the field of Analytics with 14 years of hands-on experience in Data
+                  and Business Analysis. Possesses a deep understanding of the entire data lifecycle, commencing
+                  from the acquisition of raw data, progressing through data warehousing, and culminating in the
+                  development of dashboards that effectively communicate actionable business insights.
+                </p>
+                <p>
+                  Proficient in implementing Agile and Lean methodologies.
+                </p>
+              </div>
+            </div>
           </div>
 
-          <div className="about-section">
-            <h2>What We Do</h2>
-            <ul className="about-list">
-              <li>Data Engineering and Architecture</li>
-              <li>Web Analytics and Tracking</li>
-              <li>Fraud Detection and Prevention</li>
-              <li>A/B Testing and Experimentation</li>
-              <li>Marketing Analytics</li>
-              <li>Financial Models and Forecasting</li>
-              <li>Product Analytics</li>
-              <li>Startup Advisory and Mentorship</li>
-            </ul>
-          </div>
-
-          <div className="about-section">
+          <div className={`about-section fade-in ${isVisible ? 'visible' : ''}`} style={{ transitionDelay: '0.4s' }}>
             <h2>Our Approach</h2>
             <p>
-              We believe in achieving significant results without unnecessary complexity. Our communication style centers on 
-              delivering technology that generates substantial impact. Every engagement is a partnership where we deeply understand 
-              your business challenges and build tailored solutions.
+              We believe in achieving significant results without unnecessary complexity. Our communication style
+              centers on delivering technology that generates substantial impact. Every engagement is a partnership
+              where we deeply understand your business challenges and build tailored solutions.
             </p>
           </div>
         </div>

@@ -8,123 +8,57 @@ import '../styles/pages.css'
 const SERVICES = [
   {
     id: 1,
-    title: 'Data Dashboard Design',
-    description: 'Build intuitive dashboards that visualize key metrics and KPIs for real-time decision making.',
-    image: '/balintanalytics/images/services/data-dashboard.png'
+    title: 'Gaming Analytics',
+    description: 'Whether you require assistance with fundamental Key Performance Indicators (KPIs) like cohort metrics or more complex ones involving product optimization and intricate economy tuning (such as source and sink analysis and dynamic leveling curves), we have the expertise to support you. With a track record of working with over seven gaming companies in our customer portfolio, we are well-equipped to meet your needs.',
+    image: '/balintanalytics/images/services/gaming-analytics.png'
   },
   {
     id: 2,
-    title: 'Traffic Flow Analysis',
-    description: 'Understand how users navigate through your website and identify drop-off points.',
-    image: '/balintanalytics/images/services/traffic-flow.png'
-  },
-  {
-    id: 3,
-    title: 'Conversion Funnel Optimization',
-    description: 'Analyze and optimize your conversion funnels to maximize user conversions.',
-    image: '/balintanalytics/images/services/conversion-funnel.png'
-  },
-  {
-    id: 4,
-    title: 'Heatmap Analysis',
-    description: 'Visualize user interactions to understand where visitors click, scroll, and engage.',
-    image: '/balintanalytics/images/services/heatmap.png'
-  },
-  {
-    id: 5,
-    title: 'User Journey Mapping',
-    description: 'Map complete user journeys to identify opportunities for experience improvement.',
-    image: '/balintanalytics/images/services/user-journey.png'
-  },
-  {
-    id: 6,
     title: 'A/B Testing',
-    description: 'Run controlled experiments to determine which variations perform best.',
+    description: 'How can we assess whether a feature is delivering the intended outcome? How can we ensure that random factors do not influence our results? With Balint Analytics having conducted over 700 experiments, we are well-equipped to guide you on test setup, determining the appropriate duration, and establishing the expected lift.',
     image: '/balintanalytics/images/services/ab-testing.png'
   },
   {
+    id: 3,
+    title: 'AI Agents',
+    description: 'Deploying AI agents involves aligning their capabilities with your specific business objectives and challenges to ensure relevance and effectiveness. The deployment process includes building robust data pipelines, thorough testing, and integrating the AI smoothly into existing workflows. Regular evaluation ensures the agents deliver consistent value.',
+    image: '/balintanalytics/images/services/ai-agents.png'
+  },
+  {
+    id: 4,
+    title: 'Data Engineering & Architecture',
+    description: 'Regardless of your current stage, whether it involves manually downloading CSV files or setting up a complex infrastructure with multiple data layers, we are here to support you. With our extensive experience in all major cloud services like AWS, Azure, and Google Cloud, we will assist you in finding the optimal roadmap.',
+    image: '/balintanalytics/images/services/data-architecture.png'
+  },
+  {
+    id: 5,
+    title: 'Web Analytics',
+    description: 'If you have a website and need to extract valuable insights from it, we are here to assist you. Whether you need to leverage Google Analytics (including version 4 integration), utilize Mixpanel for in-depth analysis, or capture comprehensive user activity using tools like Segment to democratize data streams to your database, we have you covered.',
+    image: '/balintanalytics/images/services/web-analytics.png'
+  },
+  {
+    id: 6,
+    title: 'Fraud Analytics',
+    description: 'If your business is experiencing a rise in fraud, we are here to assist you in developing a robust framework to address this issue. We can help you establish a risk scoring system, implement Account Take Over (ATO) prevention measures, enhance identity verification processes, and employ methods to identify instances of "friendly" fraud.',
+    image: '/balintanalytics/images/services/fraud-analytics.png'
+  },
+  {
     id: 7,
-    title: 'Real-Time Analytics',
-    description: 'Monitor live user activity and respond to trends as they happen.',
-    image: '/balintanalytics/images/services/real-time-analytics.png'
+    title: 'User Acquisition Analytics',
+    description: 'Acquiring new customers is vital for any business, particularly for apps and games. User Acquisition analysis examines the factors that influence the acquisition of new users. Balint Analytics employs User Acquisition analysis to reveal how you acquire new users and how to increase this process to ensure you recoup your investment.',
+    image: '/balintanalytics/images/services/user-acquisition.png'
   },
   {
     id: 8,
-    title: 'Mobile Analytics',
-    description: 'Track and analyze mobile user behavior across devices and platforms.',
-    image: '/balintanalytics/images/services/mobile-analytics.png'
+    title: 'Financial Models & Analytics',
+    description: 'Financial analytics is the process of using data and statistical techniques to gain insights into financial performance and make informed decisions. It can be used to analyze financial statements, market data, and economic indicators to identify trends and improve financial forecasting, budgeting, and risk management.',
+    image: '/balintanalytics/images/services/financial-analytics.png'
   },
   {
     id: 9,
-    title: 'Audience Segmentation',
-    description: 'Divide your audience into meaningful segments for targeted analysis and marketing.',
-    image: '/balintanalytics/images/services/audience-segmentation.png'
-  },
-  {
-    id: 10,
-    title: 'Attribution Modeling',
-    description: 'Understand which channels and touchpoints drive conversions and revenue.',
-    image: '/balintanalytics/images/services/attribution-modeling.png'
-  },
-  {
-    id: 11,
-    title: 'E-commerce Analytics',
-    description: 'Track shopping behavior, cart abandonment, and purchase patterns.',
-    image: '/balintanalytics/images/services/ecommerce-analytics.png'
-  },
-  {
-    id: 12,
-    title: 'Goal Tracking',
-    description: 'Define and monitor key business goals to measure success and ROI.',
-    image: '/balintanalytics/images/services/goal-tracking.png'
-  },
-  {
-    id: 13,
-    title: 'Pageview Analytics',
-    description: 'Analyze page performance, load times, and content engagement metrics.',
-    image: '/balintanalytics/images/services/pageview-analytics.png'
-  },
-  {
-    id: 14,
-    title: 'Event Tracking',
-    description: 'Track custom events and user interactions beyond standard pageviews.',
-    image: '/balintanalytics/images/services/event-tracking.png'
-  },
-  {
-    id: 15,
-    title: 'Data Insights',
-    description: 'Extract meaningful insights from complex data to inform strategic decisions.',
-    image: '/balintanalytics/images/services/data-insights.png'
-  },
-  {
-    id: 16,
-    title: 'Bounce Rate Analysis',
-    description: 'Understand why visitors leave and implement strategies to improve engagement.',
-    image: '/balintanalytics/images/services/bounce-rate.png'
-  },
-  {
-    id: 17,
-    title: 'Session Analytics',
-    description: 'Analyze user sessions to understand engagement patterns and duration.',
-    image: '/balintanalytics/images/services/session-analytics.png'
-  },
-  {
-    id: 18,
-    title: 'Click Tracking',
-    description: 'Monitor click patterns to optimize UI elements and call-to-action placement.',
-    image: '/balintanalytics/images/services/click-tracking.png'
-  },
-  {
-    id: 19,
-    title: 'Data Pipeline Engineering',
-    description: 'Build robust data pipelines to collect, process, and store analytics data.',
-    image: '/balintanalytics/images/services/data-pipeline.png'
-  },
-  {
-    id: 20,
-    title: 'Predictive Analytics',
-    description: 'Use machine learning to forecast trends and predict user behavior.',
-    image: '/balintanalytics/images/services/predictive-analytics.png'
+    title: 'Text Analytics',
+    description: 'Text analytics is the process of using natural language processing and machine learning techniques to extract insights from unstructured text data. Applications include sentiment analysis, topic modeling, and entity recognition, which can be used to improve customer engagement, product development, and market research.',
+    image: '/balintanalytics/images/services/text-analytics.png'
   }
 ]
 

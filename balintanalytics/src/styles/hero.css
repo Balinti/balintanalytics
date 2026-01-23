@@ -42,6 +42,42 @@
   color: var(--bg-color);
 }
 
+.hero-services-list {
+  text-align: left;
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 1.5rem 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+}
+
+.hero-services-list h3 {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: var(--bg-color);
+}
+
+.hero-services-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.hero-services-list li {
+  padding: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  color: var(--bg-color);
+  opacity: 0.9;
+}
+
+.hero-services-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
 .hero-cta {
   display: flex;
   gap: 1rem;
