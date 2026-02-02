@@ -19,7 +19,7 @@ function App() {
   return (
     <ErrorBoundary>
       <ThemeProvider>
-        <Router basename="/balintanalytics">
+        <Router>
           <div className="app">
             <Navigation />
             <main>
