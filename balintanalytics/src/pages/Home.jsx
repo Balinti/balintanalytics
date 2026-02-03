@@ -2,6 +2,7 @@ import { useMemo } from 'react'
 import Hero from '../components/Hero'
 import ServiceCard from '../components/ServiceCard'
 import { Link } from 'react-router-dom'
+import { PageTransition, StaggerContainer, StaggerItem, ScrollReveal, AnimatedCounter } from '../components/motion'
 import '../styles/pages.css'
 
 // Service data with images - memoized to prevent recreation
@@ -62,47 +63,76 @@ const SERVICES = [
   }
 ]
 
+const STATS = [
+  { value: 14, suffix: '+', label: 'Years Experience' },
+  { value: 700, suffix: '+', label: 'Experiments Run' },
+  { value: 12, suffix: '+', label: 'Clients Served' },
+  { value: 9, suffix: '', label: 'Service Areas' }
+]
+
 export default function Home() {
-  // Memoize service cards to prevent unnecessary re-renders
   const serviceCards = useMemo(() =>
-    SERVICES.map((service, index) => (
-      <ServiceCard
-        key={service.id}
-        title={service.title}
-        description={service.description}
-        image={service.image}
-        delay={index * 100}
-      />
+    SERVICES.map((service) => (
+      <StaggerItem key={service.id}>
+        <ServiceCard
+          title={service.title}
+          description={service.description}
+          image={service.image}
+        />
+      </StaggerItem>
     )), []
   )
 
   return (
-    <div className="home">
-      <Hero />
+    <PageTransition>
+      <div className="home">
+        <Hero />
 
-      <section className="services">
-        <div className="container">
-          <h2>Our Specialization</h2>
-          <p className="section-intro">
-            We deliver extensive consultancy encompassing data analytics and business intelligence with a focus on
-            delivering strategic results without unnecessary complexity.
-          </p>
+        <section className="services">
+          <div className="container">
+            <ScrollReveal>
+              <h2>Our Specialization</h2>
+              <p className="section-intro">
+                We deliver extensive consultancy encompassing data analytics and business intelligence with a focus on
+                delivering strategic results without unnecessary complexity.
+              </p>
+            </ScrollReveal>
 
-          <div className="services-grid">
-            {serviceCards}
+            <StaggerContainer stagger={0.08} className="services-grid">
+              {serviceCards}
+            </StaggerContainer>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section className="cta-section">
-        <div className="container">
-          <h2>Ready to Transform Your Data?</h2>
-          <p>Let's work together to maximize your business potential through data-driven strategies.</p>
-          <Link to="/contact" className="btn btn-primary btn-large">
-            Schedule a Consultation
-          </Link>
-        </div>
-      </section>
-    </div>
+        <section className="stats-section">
+          <div className="container">
+            <div className="stats-grid">
+              {STATS.map((stat) => (
+                <div key={stat.label} className="stat-item">
+                  <AnimatedCounter
+                    target={stat.value}
+                    suffix={stat.suffix}
+                    className="stat-number"
+                  />
+                  <span className="stat-label">{stat.label}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <ScrollReveal>
+          <section className="cta-section">
+            <div className="container">
+              <h2>Ready to Transform Your Data?</h2>
+              <p>Let's work together to maximize your business potential through data-driven strategies.</p>
+              <Link to="/contact" className="btn btn-primary btn-large">
+                Schedule a Consultation
+              </Link>
+            </div>
+          </section>
+        </ScrollReveal>
+      </div>
+    </PageTransition>
   )
 }

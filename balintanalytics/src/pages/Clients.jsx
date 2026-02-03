@@ -1,5 +1,6 @@
-import { useState, useEffect, useMemo } from 'react'
+import { useMemo } from 'react'
 import { Link } from 'react-router-dom'
+import { PageTransition, ParallaxSection, StaggerContainer, StaggerItem, ScrollReveal } from '../components/motion'
 import '../styles/pages.css'
 
 const CLIENTS = [
@@ -78,61 +79,55 @@ const CLIENTS = [
 ]
 
 export default function Clients() {
-  const [visibleCards, setVisibleCards] = useState([])
-
-  useEffect(() => {
-    // Staggered animation for cards
-    CLIENTS.forEach((_, index) => {
-      setTimeout(() => {
-        setVisibleCards(prev => [...prev, index])
-      }, index * 100)
-    })
-  }, [])
-
   const clientCards = useMemo(() =>
-    CLIENTS.map((client, index) => (
-      <div
-        key={client.id}
-        className={`client-card fade-in ${visibleCards.includes(index) ? 'visible' : ''}`}
-      >
-        <div className="client-card-header">
-          <h3>{client.name}</h3>
-          <span className="client-category">{client.category}</span>
+    CLIENTS.map((client) => (
+      <StaggerItem key={client.id}>
+        <div className="client-card">
+          <div className="client-card-header">
+            <h3>{client.name}</h3>
+            <span className="client-category">{client.category}</span>
+          </div>
+          <p className="client-description">{client.description}</p>
+          <Link to="/contact" className="client-cta">
+            Get in Touch
+          </Link>
         </div>
-        <p className="client-description">{client.description}</p>
-        <Link to="/contact" className="client-cta">
-          Get in Touch
-        </Link>
-      </div>
-    )), [visibleCards]
+      </StaggerItem>
+    )), []
   )
 
   return (
-    <div className="clients">
-      <section className="page-header">
-        <div className="container">
-          <h1>Our Clients</h1>
-          <p>Trusted by leading companies across gaming, marketplaces, and technology</p>
-        </div>
-      </section>
+    <PageTransition>
+      <div className="clients">
+        <ParallaxSection speed={0.2}>
+          <section className="page-header">
+            <div className="container">
+              <h1>Our Clients</h1>
+              <p>Trusted by leading companies across gaming, marketplaces, and technology</p>
+            </div>
+          </section>
+        </ParallaxSection>
 
-      <section className="clients-content">
-        <div className="container">
-          <div className="clients-grid">
-            {clientCards}
+        <section className="clients-content">
+          <div className="container">
+            <StaggerContainer stagger={0.08} className="clients-grid">
+              {clientCards}
+            </StaggerContainer>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section className="clients-cta">
-        <div className="container">
-          <h2>Ready to Join Our Client Portfolio?</h2>
-          <p>Let's discuss how we can help transform your data strategy.</p>
-          <Link to="/contact" className="btn btn-primary btn-large">
-            Contact Us
-          </Link>
-        </div>
-      </section>
-    </div>
+        <ScrollReveal>
+          <section className="clients-cta">
+            <div className="container">
+              <h2>Ready to Join Our Client Portfolio?</h2>
+              <p>Let's discuss how we can help transform your data strategy.</p>
+              <Link to="/contact" className="btn btn-primary btn-large">
+                Contact Us
+              </Link>
+            </div>
+          </section>
+        </ScrollReveal>
+      </div>
+    </PageTransition>
   )
 }

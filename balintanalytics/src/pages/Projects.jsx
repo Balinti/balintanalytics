@@ -1,4 +1,5 @@
-import { useState, useEffect, useMemo } from 'react'
+import { useMemo } from 'react'
+import { PageTransition, ParallaxSection, StaggerContainer, StaggerItem } from '../components/motion'
 import '../styles/pages.css'
 
 const PROJECTS = [
@@ -47,58 +48,51 @@ const PROJECTS = [
 ]
 
 export default function Projects() {
-  const [visibleCards, setVisibleCards] = useState([])
-
-  useEffect(() => {
-    PROJECTS.forEach((_, index) => {
-      setTimeout(() => {
-        setVisibleCards(prev => [...prev, index])
-      }, index * 150)
-    })
-  }, [])
-
   const projectCards = useMemo(() =>
-    PROJECTS.map((project, index) => (
-      <div
-        key={project.id}
-        className={`project-card fade-in ${visibleCards.includes(index) ? 'visible' : ''}`}
-      >
-        <div className="project-image">
-          <img
-            src={project.image}
-            alt={project.title}
-            loading="lazy"
-          />
-        </div>
-        <div className="project-content">
-          <h3>{project.title}</h3>
-          <p>{project.description}</p>
-          <div className="project-services">
-            {project.services.map((service, idx) => (
-              <span key={idx} className="service-badge">{service}</span>
-            ))}
+    PROJECTS.map((project) => (
+      <StaggerItem key={project.id}>
+        <div className="project-card">
+          <div className="project-image">
+            <img
+              src={project.image}
+              alt={project.title}
+              loading="lazy"
+            />
+          </div>
+          <div className="project-content">
+            <h3>{project.title}</h3>
+            <p>{project.description}</p>
+            <div className="project-services">
+              {project.services.map((service, idx) => (
+                <span key={idx} className="service-badge">{service}</span>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
-    )), [visibleCards]
+      </StaggerItem>
+    )), []
   )
 
   return (
-    <div className="projects">
-      <section className="page-header">
-        <div className="container">
-          <h1>Our Projects</h1>
-          <p>A selection of successful engagements and solutions we've delivered</p>
-        </div>
-      </section>
+    <PageTransition>
+      <div className="projects">
+        <ParallaxSection speed={0.2}>
+          <section className="page-header">
+            <div className="container">
+              <h1>Our Projects</h1>
+              <p>A selection of successful engagements and solutions we've delivered</p>
+            </div>
+          </section>
+        </ParallaxSection>
 
-      <section className="projects-content">
-        <div className="container">
-          <div className="projects-grid">
-            {projectCards}
+        <section className="projects-content">
+          <div className="container">
+            <StaggerContainer stagger={0.08} className="projects-grid">
+              {projectCards}
+            </StaggerContainer>
           </div>
-        </div>
-      </section>
-    </div>
+        </section>
+      </div>
+    </PageTransition>
   )
 }
