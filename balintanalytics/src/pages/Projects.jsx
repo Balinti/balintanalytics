@@ -8,42 +8,42 @@ const PROJECTS = [
     title: "Real Estate Analytics Platform",
     description: "Comprehensive MLS data integration with predictive analytics for property market analysis",
     services: ["Data Engineering", "Web Analytics", "Predictive Modeling"],
-    image: '/balintanalytics/images/projects/real-estate.webp'
+    image: '/images/projects/real-estate.webp'
   },
   {
     id: 2,
     title: "E-Commerce Performance Dashboard",
     description: "Real-time analytics dashboard tracking conversion rates, ROAS, and customer behavior",
     services: ["Web Analytics", "Data Visualization", "Performance Tracking"],
-    image: '/balintanalytics/images/projects/ecommerce.webp'
+    image: '/images/projects/ecommerce.webp'
   },
   {
     id: 3,
     title: "Startup Financial Modeling",
     description: "Custom financial models and forecasting tools for growing startups",
     services: ["Financial Modeling", "Data Architecture", "Advisory"],
-    image: '/balintanalytics/images/projects/startup-finance.webp'
+    image: '/images/projects/startup-finance.webp'
   },
   {
     id: 4,
     title: "A/B Testing Framework",
     description: "Built comprehensive experimentation platform for major e-commerce client",
     services: ["A/B Testing", "Statistical Analysis", "Implementation"],
-    image: '/balintanalytics/images/projects/ab-testing-framework.webp'
+    image: '/images/projects/ab-testing-framework.webp'
   },
   {
     id: 5,
     title: "Fraud Detection System",
     description: "Machine learning models to identify and prevent fraudulent transactions",
     services: ["Fraud Analytics", "Machine Learning", "Data Engineering"],
-    image: '/balintanalytics/images/projects/fraud-detection.webp'
+    image: '/images/projects/fraud-detection.webp'
   },
   {
     id: 6,
     title: "Marketing Attribution Model",
     description: "Multi-touch attribution analysis across digital marketing channels",
     services: ["Marketing Analytics", "Statistical Modeling", "Consulting"],
-    image: '/balintanalytics/images/projects/marketing-attribution.webp'
+    image: '/images/projects/marketing-attribution.webp'
   }
 ]
 
